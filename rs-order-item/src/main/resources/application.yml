@@ -1,0 +1,35 @@
+server:
+  port: ${PORT:8084}
+
+spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate: 
+      naming: 
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: jdbc:mysql://192.168.66.30:3306/store
+    username: root
+    password: devops@integra
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    beans:
+      enabled: true
+    health:
+      show-details: ALWAYS
+  info:
+    build:
+      enabled: true
+
+
+
+
+
+
+    

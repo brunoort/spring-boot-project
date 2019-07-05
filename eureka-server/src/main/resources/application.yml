@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:8761}
+  servlet:
+    context-path: /eureka
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+  server:
+    enable-self-preservation: true
+    wait-time-in-ms-when-sync-empty: 3000
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    beans:
+      enabled: true
+    health:
+      show-details: ALWAYS
+  info:
+    build:
+      enabled: true 
