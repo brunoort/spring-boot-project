@@ -1,18 +1,17 @@
-package br.com.institutointegra.api.orderitem;
+package br.com.institutointegra.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-@EnableSwagger2
+@EnableZuulProxy
 @EnableEurekaClient
-public class RsOrderItemApplication {
+public class ZuulServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RsOrderItemApplication.class, args);
+		SpringApplication.run(ZuulServerApplication.class, args);
 	}
 
 }

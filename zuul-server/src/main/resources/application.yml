@@ -1,0 +1,47 @@
+server:
+  port: ${PORT:8765}
+  
+spring:
+  application:
+    name: ${APP_NAME:zuul-server}
+
+zuul:
+  sensitive-headers: '*'
+  ignored-services:
+    - rs-client
+     
+  host:
+    connect-timeout-millis: 50000
+    connection-request-timeout-millis: 50000
+    socket-timeout-millis: 50000
+  routes:
+    spec-client:
+      path: /client/**
+      service-id: spec-client
+      
+ribbon:
+  ReadTimeout: 50000
+  SocketTimeout: 50000
+  eureka:
+    enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL1:http://localhost:8761/eureka/eureka}
+  instance:
+    prefer-ip-address: true
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    beans:
+      enabled: true
+    health:
+      show-details: ALWAYS
+  info:
+    build:
+      enabled: true

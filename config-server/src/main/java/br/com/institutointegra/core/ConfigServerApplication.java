@@ -1,18 +1,17 @@
-package br.com.institutointegra.api.orderitem;
+package br.com.institutointegra.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 @SpringBootApplication
-@EnableSwagger2
+@EnableConfigServer
 @EnableEurekaClient
-public class RsOrderItemApplication {
+public class ConfigServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RsOrderItemApplication.class, args);
+		SpringApplication.run(ConfigServerApplication.class, args);
 	}
 
 }

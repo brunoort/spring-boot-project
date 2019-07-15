@@ -1,0 +1,37 @@
+server:
+  port: ${PORT:8888}
+  
+spring:
+  application:
+    name: ${APP_NAME:config-server}
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://192.168.66.10/root/configuration-file.git
+          username: root
+          password: devops@integra
+          search-paths:
+            - '{application}'
+          clone-on-start: true
+          
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL1:http://localhost:8761/eureka/eureka}
+  instance:
+    prefer-ip-address: true
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    beans:
+      enabled: true
+    health:
+      show-details: ALWAYS
+  info:
+    build:
+      enabled: true 

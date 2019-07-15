@@ -1,6 +1,13 @@
 server:
   port: ${PORT:8084}
 
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL1:http://localhost:8761/eureka/eureka}
+  instance:
+    prefer-ip-address: true
+    
 spring:
   jpa:
     database: MYSQL
