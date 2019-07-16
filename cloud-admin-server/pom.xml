@@ -8,11 +8,11 @@
 		<version>2.1.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.institutointegra.api</groupId>
-	<artifactId>spec-user</artifactId>
+	<groupId>br.com.institutointegra.core</groupId>
+	<artifactId>cloud-admin-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spec-client</name>
-	<description>spec client</description>
+	<name>cloud-admin-server</name>
+	<description>cloud-admin-server</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -21,12 +21,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+		<spring-boot-admin.version>2.1.5</spring-boot-admin.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-server</artifactId>
 		</dependency>
 
 		<dependency>
@@ -42,18 +43,10 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.8.0</version>
-			<scope>compile</scope>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.8.0</version>
-			<scope>compile</scope>
-		</dependency>
+		
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -64,29 +57,17 @@
 			<groupId>org.jolokia</groupId>
 			<artifactId>jolokia-core</artifactId>
 		</dependency>	
-		
-		<!-- FEIGN -->
-		  <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-		
-		<!-- EUREKA CLIENT -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-		
-		<!-- CONFIG SERVER -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		
 	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-dependencies</artifactId>
+				<version>${spring-boot-admin.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -134,5 +115,5 @@
 			<url>https://repo.spring.io/milestone</url>
 		</repository>
 	</repositories>
-	
+
 </project>

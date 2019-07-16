@@ -18,6 +18,15 @@ zuul:
     spec-client:
       path: /client/**
       service-id: spec-client
+    spec-user:
+      path: /user/**
+      service-id: spec-user
+    spec-product:
+      path: /product/**
+      service-id: spec-product
+    spec-orders:
+      path: /orders/**
+      service-id: spec-orders  
       
 ribbon:
   ReadTimeout: 50000

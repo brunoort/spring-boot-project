@@ -1,0 +1,17 @@
+server:
+  port: ${PORT:8089}
+
+store:
+  url:
+    rs-orders: ${URL_RS_ORDERS:}
+    
+spring:
+  application:
+    name:  ${APP_NAME:spec-orders}
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL1:http://localhost:8761/eureka/eureka}
+  instance:
+    prefer-ip-address: true

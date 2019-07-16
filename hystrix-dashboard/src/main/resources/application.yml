@@ -1,0 +1,13 @@
+server:
+  port: ${PORT:8766}
+
+spring:
+  application:
+    name: hystrix-dashboard
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL1:http://localhost:8761/eureka/eureka}
+  instance:
+    prefer-ip-address: true

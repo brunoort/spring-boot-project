@@ -1,4 +1,4 @@
-package br.com.institutointegra.api.spec.user;
+package br.com.institutointegra.api.spec.product;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
@@ -22,7 +22,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.institutointegra.api.spec.user.resource"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.institutointegra.api.spec.product.resource"))
                 .paths(regex("/api.*"))
                 .build()
                 .apiInfo(metaData());

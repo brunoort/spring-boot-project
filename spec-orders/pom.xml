@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.institutointegra.api</groupId>
-	<artifactId>spec-user</artifactId>
+	<artifactId>spec-orders</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spec-client</name>
 	<description>spec client</description>
