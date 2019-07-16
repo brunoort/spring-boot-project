@@ -1,13 +1,13 @@
 server:
-  port: ${PORT:8087}
+  port: ${PORT:8086}
 
 store:
   url:
-    rs-client: ${URL_RS_CLIENT:}
+    rs-user: ${URL_RS_USER:}
     
 spring:
   application:
-    name:  ${APP_NAME:spec-client}
+    name:  ${APP_NAME:spec-user}
     
 eureka:
   client:
